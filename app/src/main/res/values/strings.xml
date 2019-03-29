@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="pressure">Тиск: %1$d гПа</string>
+    <string name="cloudy">Хмарність: %1$d %%</string>
+    <string name="loading">Завантаження&#8230;</string>
+    <string name="error_downloading">Помилка при завантаженні :(</string>
+    <string name="ok">OK</string>
+    <string name="settings_alert_title">Важливе повідомлення</string>
+    <string name="settings_alert_message">Будь ласка, увімкніть функцію високої точності GPS в налаштуваннях місцезнаходження</string>
+    <string name="on_provider_disabled">Не вимикайте високоточний режим GPS</string>
+</resources>
