@@ -1,11 +1,34 @@
 <resources>
-    <string name="app_name">Weather</string>
-    <string name="pressure">Тиск: %1$d гПа</string>
-    <string name="cloudy">Хмарність: %1$d %%</string>
-    <string name="loading">Завантаження&#8230;</string>
-    <string name="error_downloading">Помилка при завантаженні :(</string>
+    <string name="app_name" translatable="false">Weather</string>
+    <string name="pressure">Pressure: %1$d hPa</string>
+    <string name="cloudy">Cloudiness: %1$d %%</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="error_downloading">Error while loading :(</string>
     <string name="ok">OK</string>
-    <string name="settings_alert_title">Важливе повідомлення</string>
-    <string name="settings_alert_message">Будь ласка, увімкніть функцію високої точності GPS в налаштуваннях місцезнаходження</string>
-    <string name="on_provider_disabled">Не вимикайте високоточний режим GPS</string>
+    <string name="settings_alert_title">Important message</string>
+    <string name="settings_alert_message">"Please allow high-accuracy function in GPS settings "</string>
+    <string name="on_provider_disabled">Do not turn off high-accuracy mode</string>
+    <string name="app_needs_permission">This app requires the permission to get your location. Please allow it in Settings -> App -> *app name* -> Permissions.</string>
+    <string name="settings_action_bar">App\'s settings</string>
+    <string name="provider_enabled">Provider successfully enabled</string>
+
+    <string-array name="theme_settings_entries">
+        <item>Light mode</item>
+        <item>Glamor mode</item>
+        <item>Dark mode</item>
+        <item>Sunny Mode</item>
+        <item>Sky Blue</item>
+    </string-array>
+
+    <string-array name="theme_settings_entry_values">
+        <item>LightMode</item>
+        <item>GlamorMode</item>
+        <item>DarkMode</item>
+        <item>SunnyMode</item>
+        <item>SkyBlue</item>
+    </string-array>
+
+    <string name="default_theme" translatable="false">LightMode</string>
+    <string name="theme_setting_tittle">Choose a theme</string>
+    <string name="theme_setting_summary">You can choose a pretty theme</string>
 </resources>

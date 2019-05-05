@@ -2,9 +2,10 @@ package example.yuratoxa.weather;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     @Override
-    public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,  int viewType) {
+    public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = inflater.inflate(R.layout.list_item, parent, false);
         return new ViewHolder(view);
@@ -53,7 +54,24 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final DataAdapter.ViewHolder holder, int position) {
 
-        long todayMidnight, todayMidday;
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.color_first_cell, typedValue, true);
+
+        int receivedColor = typedValue.data;
+        colors[0] = receivedColor;
+
+        theme.resolveAttribute(R.attr.color_second_cell, typedValue, true);
+        receivedColor = typedValue.data;
+        colors[1] = receivedColor;
+
+        holder.getView().setBackgroundColor(colors[position % 2]);
+
+        // if (allWeatherLists == null) holder.setVariablesFrom(new Forecast(context));
+
+        if (allWeatherLists == null) holder.setImage(R.drawable.loading);
+
+        long todayMidnight;
         Date today = new Date();
         Calendar calendar = Calendar.getInstance();
         long currentTime = today.getTime();
@@ -63,21 +81,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         long seconds = calendar.get(Calendar.SECOND) * ONE_SECOND;
         todayMidnight = currentTime - (hours + minutes + seconds);
         todayMidnight = todayMidnight + (position * ONE_DAY);
-        todayMidday = todayMidnight + (ONE_HOUR * 12);
 
-        Log.d(TAG, "onBindViewHolder: called");
-        Resources res = context.getResources();
-        colors[0] = res.getColor(R.color.white);
-        colors[1] = res.getColor(R.color.grey);
-        holder.getView().setBackgroundColor(colors[position % 2]);
         final ArrayList<WeatherList> currentWeather = new ArrayList<>();
         final ArrayList<String> spinnerStrings = new ArrayList<>();
         final Spinner spinner = holder.forecastSpinner;
         long tomorrowMidnight = todayMidnight + ONE_DAY;
 
-        if (allWeatherLists == null)
-            holder.setVariablesFrom(new Forecast(context));
-        else {
+        if (allWeatherLists != null) {
             for (WeatherList weatherList : allWeatherLists) {
 
                 if (weatherList.getDt() * ONE_SECOND < tomorrowMidnight
@@ -123,10 +133,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        final ImageView imageView;
-        final TextView cloudyView, descriptionView, pressureView;// dateView;
-        final Spinner forecastSpinner;
+        private final ImageView imageView;
+        private final TextView cloudyView, descriptionView, pressureView;// dateView;
+        private final Spinner forecastSpinner;
         private View view;
+
+        private void setImage(@DrawableRes int resId) {
+            imageView.setImageResource(resId);
+        }
 
         ViewHolder(View view) {
             super(view);
@@ -136,7 +150,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             pressureView = view.findViewById(R.id.pressure);
             forecastSpinner = view.findViewById(R.id.forecast_spinner);
             this.view = view;
-            //dateView = view.findViewById(R.id.date);
         }
 
         View getView() {
@@ -149,22 +162,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                     .load("https://api.openweathermap.org/img/w/" + forecast.getImageName())
                     .placeholder(R.drawable.loading)
                     .into(imageView);
-            ArrayList<String> spinnerStrings = forecast.getSpinnerForecastList();
             String cloudy = res.getString(R.string.cloudy, forecast.getCloudy());
             String pressure = res.getString(R.string.pressure, forecast.getPressure());
 
             cloudyView.setText(cloudy);
             descriptionView.setText(forecast.getDescription());
             pressureView.setText(pressure);
-
-            /*final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(context,
-                    android.R.layout.simple_spinner_item, spinnerStrings);
-            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            forecastSpinner.setAdapter(spinnerAdapter);
-        */
         }
     }
-
     private void getFieldsFromWeatherList(WeatherList list) {
         description = list.getWeather().get(0).getDescription();
         cloudy = list.getClouds().getAll();
@@ -173,9 +178,4 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         image = list.getWeather().get(0).getIcon();
     }
 
-
 }
-
-//  if (i < 40) view.setBackgroundColor(green); else
-// if (i < 70) view.setBackgroundColor(orange); else
-//     view.setBackgroundColor(red);

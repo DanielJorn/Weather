@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="ok">OK</string>
+    <string name="pressure">Давление: %1$d hPa</string>
+    <string name="cloudy">Облачность: %1$d %%</string>
+    <string name="loading">Загрузка&#8230;</string>
+    <string name="error_downloading">Ошибка при загрузке :(</string>
+    <string name="settings_alert_title">Важное сообщение</string>
+    <string name="settings_alert_message">Пожалуйста, включите функцию высокой точности GPS в настройках местоположения</string>
+    <string name="app_needs_permission">Это приложение требует разрешения на получение локации. Пожалуйста, включите его в Settings -> App -> *app name* -> Permissions.</string>
+    <string name="on_provider_disabled">Не выключайте режим высокой точности</string>
+    <string name="settings_action_bar">Настройки приложения</string>
+    <string name="theme_setting_tittle">Выберите тему</string>
+    <string name="theme_setting_summary">Вы можете выбрать красивенькую тему</string>
+
+    <string-array name="theme_settings_entries">
+        <item>Мрачный режим</item>
+        <item>Гламурный режим</item>
+        <item>Светлый режим</item>
+        <item>Солнечный режим</item>
+        <item>Небесно-голубой</item>
+    </string-array>
+    <string name="provider_enabled">Провайдер успешно включен</string>
+
+</resources>

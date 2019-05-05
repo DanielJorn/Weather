@@ -4,7 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="grey">#ede9e9</color>
-    <color name="white">#f4f1f1</color>
+    <color name="creamy">#BFE8EAF6</color>
+    <color name="invisible">#00ffffff</color>
+    <color name="dark">#000000</color>
+    
+    <color name="orange">#ED3C10</color>
+    <color name="darkOrange">#d53811</color>
+    <color name="green">#15ff00</color>
 
 </resources>

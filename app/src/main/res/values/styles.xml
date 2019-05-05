@@ -1,11 +1,43 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="LightMode" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="color_first_cell">@color/invisible</item>
+        <item name="color_second_cell">@color/creamy</item>
+    </style>
+
+    <style name="DarkMode" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#221010</item>
+        <item name="colorPrimaryDark">#140A00</item>
+        <item name="colorAccent">#D83C0A</item>
+        <item name="color_first_cell">#000000</item>
+        <item name="color_second_cell">#121212</item>
+    </style>
+
+    <style name="GlamorMode" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#fdc4e3</item>
+        <item name="colorPrimaryDark">#b60665</item>
+        <item name="colorAccent">#120BF8</item>
+        <item name="color_first_cell">#fe84a7</item>
+        <item name="color_second_cell">#fdc4e3</item>
+    </style>
+
+    <style name="SunnyMode" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#fee86d</item>
+        <item name="colorPrimaryDark">#ffd100</item>
+        <item name="colorAccent">#FF6D00</item>
+        <item name="color_first_cell">#fdefa4</item>
+        <item name="color_second_cell">#fef278</item>
+    </style>
+
+    <style name="SkyBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#8ca6fe</item>
+        <item name="colorPrimaryDark">#68a1fe</item>
+        <item name="colorAccent">#304FFE</item>
+        <item name="color_first_cell">#8ce2fd</item>
+        <item name="color_second_cell">#8ca6fe</item>
     </style>
 
 </resources>

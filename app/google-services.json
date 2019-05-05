@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "417000109480",
+    "firebase_url": "https://alwayssunnyweather.firebaseio.com",
+    "project_id": "alwayssunnyweather",
+    "storage_bucket": "alwayssunnyweather.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417000109480:android:b218eab8c0dcb101",
+        "android_client_info": {
+          "package_name": "com.danjorn.weather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417000109480-kouomn8nd3cbq300e8on9ikqhpbbaph1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.danjorn.weather",
+            "certificate_hash": "c755fe5d2715a30d75a33d641dd82f5f99bfed16"
+          }
+        },
+        {
+          "client_id": "417000109480-4s5a5nca919cf4795if2nnrp2h6ne8j6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvD__bbfZYCLdXOge6danny81CZyTtjH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417000109480-4s5a5nca919cf4795if2nnrp2h6ne8j6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

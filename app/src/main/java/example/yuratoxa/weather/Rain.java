@@ -4,7 +4,9 @@ package example.yuratoxa.weather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Rain {
+import java.io.Serializable;
+
+public class Rain implements Serializable {
 
     @SerializedName("3h")
     @Expose

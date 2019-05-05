@@ -4,7 +4,9 @@ package example.yuratoxa.weather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
 
     @SerializedName("id")
     @Expose
@@ -35,7 +37,7 @@ public class Weather {
         this.main = main;
     }
 
-    public String getDescription() {
+     String getDescription() {
         return description;
     }
 
@@ -43,7 +45,7 @@ public class Weather {
         this.description = description;
     }
 
-    public String getIcon() {
+     String getIcon() {
         return icon;
     }
 

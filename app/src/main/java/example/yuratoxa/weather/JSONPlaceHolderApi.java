@@ -8,7 +8,7 @@ public interface JSONPlaceHolderApi {
 
     @GET("/data/2.5/forecast")
     Call<WeatherDay> getDataFiveDays(@Query("units") String units, @Query("APPID") String APPID,
-                                     @Query("lang") String lang, @Query("lat") int lat,
-                                     @Query("lon") int lon);
+                                     @Query("lang") String lang, @Query("lat") double lat,
+                                     @Query("lon") double lon);
 }
 
